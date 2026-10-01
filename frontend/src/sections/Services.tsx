@@ -16,7 +16,7 @@ export function Services() {
     return (
         <section id="estrutura" className="section-y" aria-labelledby="estrutura-title">
             <div className="wrapper">
-                <header className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-[40rem] text-center">
+                <header className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-160 text-center">
                     <h2 id="estrutura-title" className="heading-lg text-ink">
                         {services.title}
                     </h2>
@@ -26,7 +26,7 @@ export function Services() {
                 <ul className="grid auto-rows-[minmax(124px,auto)] grid-cols-2 gap-3 sm:auto-rows-[minmax(150px,auto)] sm:grid-cols-3 sm:gap-4 lg:auto-rows-[minmax(190px,auto)] lg:grid-cols-[minmax(0,2fr)_repeat(2,minmax(0,1fr))]">
                     <li
                         className={cx(
-                            "relative col-span-full flex min-h-[260px] flex-col justify-end overflow-hidden rounded-card bg-feature p-[clamp(1.5rem,3vw,2rem)] lg:col-[1] lg:row-[1/span_2] lg:min-h-0",
+                            "relative col-span-full flex min-h-65 flex-col justify-end overflow-hidden rounded-card bg-feature p-[clamp(1.5rem,3vw,2rem)] lg:col-1 lg:row-[1/span_2] lg:min-h-0",
                             // Garante leitura do texto quando houver foto no fundo
                             feature.image &&
                                 "after:absolute after:inset-0 after:bg-linear-to-t after:from-cream/95 after:to-transparent after:to-60%",
@@ -48,7 +48,7 @@ export function Services() {
                         </div>
                     </li>
 
-                    <li className="col-span-full flex items-center gap-4 rounded-card bg-mint p-[clamp(1.5rem,3vw,2rem)] text-mint-ink lg:col-[1] lg:row-[3]">
+                    <li className="col-span-full flex items-center gap-4 rounded-card bg-mint p-[clamp(1.5rem,3vw,2rem)] text-mint-ink lg:col-1 lg:row-3">
                         <span className="grid size-11 shrink-0 place-items-center rounded-full border border-current">
                             <Icon name={highlight.icon} size={20} />
                         </span>

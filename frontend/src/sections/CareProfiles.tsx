@@ -20,7 +20,7 @@ export function CareProfiles() {
                     {careProfiles.items.map((profile) => (
                         <li
                             key={profile.title}
-                            className="flex flex-col gap-2.5 rounded-card border border-line bg-cream px-[1.375rem] pt-6 pb-7"
+                            className="flex flex-col gap-2.5 rounded-card border border-line bg-cream px-5.5 pt-6 pb-7"
                         >
                             <span className="mb-3.5 grid size-10 place-items-center rounded-full bg-tile text-ink">
                                 <Icon name={profile.icon} size={18} />

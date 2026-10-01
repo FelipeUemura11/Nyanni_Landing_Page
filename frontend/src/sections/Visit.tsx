@@ -90,7 +90,7 @@ export function Visit() {
                     >
                         {visit.title}
                     </h2>
-                    <p className="max-w-[30rem] leading-[1.7] text-cream/80">{visit.lead}</p>
+                    <p className="max-w-120 leading-[1.7] text-cream/80">{visit.lead}</p>
 
                     <ul className="mt-9 grid gap-4">
                         <li>
@@ -135,7 +135,7 @@ export function Visit() {
 
                 <div className="@container rounded-panel bg-cream p-[clamp(1.5rem,3.5vw,2.5rem)] text-ink [--focus-ring:var(--color-green)]">
                     <form
-                        className="grid gap-[1.375rem]"
+                        className="grid gap-5.5"
                         onSubmit={handleSubmit}
                         noValidate
                     >
@@ -172,7 +172,7 @@ export function Visit() {
                             ) : null}
                         </div>
 
-                        <div className="grid gap-x-4 gap-y-[1.375rem] @lg:grid-cols-[auto_minmax(0,1fr)]">
+                        <div className="grid gap-x-4 gap-y-5.5 @lg:grid-cols-[auto_minmax(0,1fr)]">
                             <fieldset className="m-0 grid min-w-0 content-start gap-2 border-0 p-0">
                                 <legend className={LABEL}>
                                     A visita é para
@@ -196,7 +196,7 @@ export function Visit() {
                                                     )
                                                 }
                                             />
-                                            <span className="inline-flex min-h-12 cursor-pointer items-center rounded-full border border-line-strong bg-white px-[1.125rem] text-[0.9375rem] transition-colors duration-150 peer-checked:border-green peer-checked:bg-green peer-checked:text-cream peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-green hover:border-green">
+                                            <span className="inline-flex min-h-12 cursor-pointer items-center rounded-full border border-line-strong bg-white px-4.5 text-[0.9375rem] transition-colors duration-150 peer-checked:border-green peer-checked:bg-green peer-checked:text-cream peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-green hover:border-green">
                                                 {option.label}
                                             </span>
                                         </label>
@@ -243,7 +243,7 @@ export function Visit() {
                             </label>
                             <textarea
                                 id={`${id}-message`}
-                                className={`${INPUT} min-h-[108px] resize-y leading-[1.55]`}
+                                className={`${INPUT} min-h-27 resize-y leading-[1.55]`}
                                 rows={3}
                                 placeholder="Conte um pouco sobre a rotina ou as necessidades de quem vai morar aqui."
                                 value={form.message}

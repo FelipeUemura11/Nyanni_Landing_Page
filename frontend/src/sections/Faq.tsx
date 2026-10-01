@@ -9,7 +9,7 @@ export function Faq() {
                     <h2 id="faq-title" className="heading-lg text-ink">
                         {faq.title}
                     </h2>
-                    <p className="mt-4 mb-6 max-w-[26rem] leading-[1.7] text-body">{faq.intro}</p>
+                    <p className="mt-4 mb-6 max-w-104 leading-[1.7] text-body">{faq.intro}</p>
                     <a
                         className="text-[0.9375rem] font-medium text-green-dark underline decoration-green/40 underline-offset-4 hover:decoration-current"
                         href="#agendar"
@@ -26,10 +26,10 @@ export function Faq() {
                                 <Icon
                                     name="chevronDown"
                                     size={20}
-                                    className="shrink-0 text-green transition-transform duration-[250ms] ease-soft group-open:rotate-180"
+                                    className="shrink-0 text-green transition-transform duration-250 ease-soft group-open:rotate-180"
                                 />
                             </summary>
-                            <p className="max-w-[38rem] pr-10 pb-6 leading-[1.7] text-body">
+                            <p className="max-w-152 pr-10 pb-6 leading-[1.7] text-body">
                                 {item.answer}
                             </p>
                         </details>

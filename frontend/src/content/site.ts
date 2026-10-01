@@ -58,7 +58,7 @@ export const contact = {
 // ---------------------------------------------------------------------------
 
 export const navigation: NavLink[] = [
-    { label: "A Nyanni", href: "#a-nyanni" },
+    { label: "Sobre Nós", href: "#about" },
     { label: "Cuidados", href: "#cuidados" },
     { label: "Estrutura", href: "#estrutura" },
     { label: "Experiência", href: "#experiencia" },
@@ -76,7 +76,7 @@ export const hero = {
     titleAccent: "viver bem.",
     lead: "Cuidado constante, conforto de lar e novas amizades. Descubra a tranquilidade de estar em um lugar pensado para o seu bem-estar, autonomia e dignidade.",
     primaryCta: { label: "Agendar uma visita", href: "#agendar" },
-    secondaryCta: { label: "Conheça a Nyanni", href: "#a-nyanni" },
+    secondaryCta: { label: "Conheça a Nyanni", href: "#about" },
     image: {
         src: image("hero.webp"),
         alt: "Residente de cabelos grisalhos sorrindo enquanto lê um livro em uma poltrona, em uma sala iluminada por luz natural",
@@ -218,10 +218,6 @@ export const footer = {
                 { label: "Portal da Família", href: "#" },
                 { label: "Agendar Visita", href: "#agendar" },
             ],
-        },
-        {
-            title: "Legal",
-            links: [{ label: "Privacidade", href: "#" }],
         },
     ],
     credits: "Design para longevidade e dignidade.",

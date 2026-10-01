@@ -41,7 +41,7 @@ Edite apenas `src/content/site.ts`. Cada `href` do menu aponta para o `id` de um
 
 | Menu        | Seção                                 |
 | ----------- | ------------------------------------- |
-| A Nyanni    | `#a-nyanni` · Nossa filosofia         |
+| A Nyanni    | `#about` · Nossa filosofia         |
 | Cuidados    | `#cuidados` · Tipos de acolhimento    |
 | Estrutura   | `#estrutura` · Serviços               |
 | Experiência | `#experiencia` · Faixa de pilares     |

@@ -1,0 +1,247 @@
+.section {
+  --focus-ring: var(--color-cream);
+  padding-block: var(--section-y);
+  background: var(--color-forest);
+  color: var(--color-cream);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+}
+
+.eyebrow {
+  color: #b9cbbe;
+}
+
+.title {
+  max-width: 16ch;
+  margin: 1rem 0 1.25rem;
+  color: var(--color-cream);
+}
+
+.lead {
+  max-width: 30rem;
+  margin: 0;
+  line-height: 1.7;
+  color: rgb(251 248 243 / 0.82);
+}
+
+.contactList {
+  display: grid;
+  gap: 1rem;
+  margin: 2.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  color: var(--color-cream);
+  text-decoration: none;
+}
+
+.contactLink:hover > span:last-child {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contactIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(251 248 243 / 0.3);
+  border-radius: 50%;
+}
+
+.contactLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #b9cbbe;
+}
+
+/* ---------- Cartão do formulário ---------- */
+.card {
+  --focus-ring: var(--color-green);
+  container-type: inline-size;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.form {
+  display: grid;
+  gap: 1.375rem;
+}
+
+.field,
+.fieldset {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.label {
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-text-soft);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.375rem 1rem;
+}
+
+/* Lado a lado só quando o próprio cartão tem espaço (não depende da tela) */
+@container (min-width: 500px) {
+  .row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  font-size: 1rem;
+  color: var(--color-ink);
+  transition:
+    border-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
+}
+
+.input::placeholder {
+  color: #9a968f;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 3px rgb(82 106 90 / 0.2);
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.select {
+  appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23526A5A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  cursor: pointer;
+}
+
+.textarea {
+  min-height: 108px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.error {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--color-error);
+}
+
+.choices {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+.choice span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 1.125rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition:
+    background-color 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    color 0.15s var(--ease);
+}
+
+.choice span:hover {
+  border-color: var(--color-green);
+}
+
+.choice input:checked + span {
+  border-color: var(--color-green);
+  background: var(--color-green);
+  color: var(--color-cream);
+}
+
+.choice input:focus-visible + span {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+}
+
+.status {
+  display: flex;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-mint);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-mint-ink);
+}
+
+.status svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.status a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.alt {
+  margin: 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.alt a {
+  font-weight: 500;
+  color: var(--color-green-dark);
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

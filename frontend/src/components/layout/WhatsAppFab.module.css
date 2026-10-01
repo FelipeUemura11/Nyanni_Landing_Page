@@ -1,0 +1,22 @@
+.fab {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-green);
+  color: var(--color-cream);
+  box-shadow: var(--shadow-float);
+  transition:
+    background-color 0.2s var(--ease),
+    transform 0.2s var(--ease);
+}
+
+.fab:hover {
+  background: var(--color-green-dark);
+  transform: translateY(-2px);
+}

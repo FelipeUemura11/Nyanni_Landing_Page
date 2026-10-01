@@ -5,13 +5,13 @@ export function CareProfiles() {
     return (
         <section
             id="cuidados"
-            className="section-y bg-sand"
+            className="bg-sand section-y"
             aria-labelledby="cuidados-title"
         >
             <div className="wrapper">
                 <h2
                     id="cuidados-title"
-                    className="heading-lg mb-[clamp(2rem,4vw,3rem)] text-center text-ink"
+                    className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-ink"
                 >
                     {careProfiles.title}
                 </h2>

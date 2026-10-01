@@ -16,9 +16,6 @@ import { Visit } from "./sections/Visit";
 function App() {
     return (
         <>
-            <a className="fixed top-3 left-3 z-[100] -translate-y-[200%] rounded-full bg-green px-5 py-3 font-medium text-cream no-underline transition-transform duration-200 ease-soft focus-visible:translate-y-0" href="#conteudo">
-                Pular para o conteúdo
-            </a>
             <Header />
             <main id="conteudo">
                 <Hero />

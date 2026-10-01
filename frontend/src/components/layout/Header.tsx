@@ -9,7 +9,10 @@ import { Button } from "../ui/Button";
 
 const SECTION_IDS = ["inicio", ...navigation.map((item) => item.href.slice(1))];
 const DESKTOP_QUERY = "(min-width: 1024px)"; // breakpoint `lg` do Tailwind
-const whatsappHref = buildWhatsAppLink(contact.whatsappNumber, contact.greeting);
+const whatsappHref = buildWhatsAppLink(
+    contact.whatsappNumber,
+    contact.greeting,
+);
 
 export function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +46,8 @@ export function Header() {
     }, [menuOpen]);
 
     const closeMenu = () => setMenuOpen(false);
-    const isActive = (href: string) => activeId !== null && href === `#${activeId}`;
+    const isActive = (href: string) =>
+        activeId !== null && href === `#${activeId}`;
 
     return (
         <header
@@ -69,7 +73,9 @@ export function Header() {
                                 <li key={item.label}>
                                     <a
                                         href={item.href}
-                                        aria-current={active ? "true" : undefined}
+                                        aria-current={
+                                            active ? "true" : undefined
+                                        }
                                         className={cx(
                                             "relative inline-block py-1.5 text-sm no-underline transition-colors duration-150 hover:text-ink",
                                             "after:absolute after:inset-x-0 after:bottom-0 after:h-px after:origin-left after:bg-green after:transition-transform after:duration-250",
@@ -126,7 +132,9 @@ export function Header() {
                                 <li key={item.label}>
                                     <a
                                         href={item.href}
-                                        aria-current={active ? "true" : undefined}
+                                        aria-current={
+                                            active ? "true" : undefined
+                                        }
                                         onClick={closeMenu}
                                         className={cx(
                                             "block border-b border-line py-4 text-[1.0625rem] no-underline",
@@ -140,7 +148,11 @@ export function Header() {
                         })}
                     </ul>
                     <div className="mt-7 grid gap-3">
-                        <Button href={hero.primaryCta.href} block onClick={closeMenu}>
+                        <Button
+                            href={hero.primaryCta.href}
+                            block
+                            onClick={closeMenu}
+                        >
                             {hero.primaryCta.label}
                         </Button>
                         <Button

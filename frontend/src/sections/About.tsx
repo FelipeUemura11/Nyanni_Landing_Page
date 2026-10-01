@@ -5,17 +5,23 @@ export function About() {
     const [first, ...rest] = about.paragraphs;
 
     return (
-        <section id="about" className="section-y" aria-labelledby="filosofia-title">
+        <section
+            id="about"
+            className="section-y"
+            aria-labelledby="filosofia-title"
+        >
             <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-2">
                 <div>
                     <p className="eyebrow text-body">{about.eyebrow}</p>
                     <h2
                         id="filosofia-title"
-                        className="heading-lg mt-4 mb-6 max-w-[20ch] text-ink"
+                        className="mt-4 mb-6 max-w-[20ch] heading-lg text-ink"
                     >
                         {about.title}
                     </h2>
-                    <p className="mb-4 max-w-136 leading-[1.75] text-body">{first}</p>
+                    <p className="mb-4 max-w-136 leading-[1.75] text-body">
+                        {first}
+                    </p>
                     {rest.map((paragraph) => (
                         <p
                             key={paragraph}

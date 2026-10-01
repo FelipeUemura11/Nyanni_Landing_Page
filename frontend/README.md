@@ -39,14 +39,14 @@ Utilitários do projeto: `wrapper` (largura do conteúdo), `section-y`
 
 Edite apenas `src/content/site.ts`. Cada `href` do menu aponta para o `id` de uma seção:
 
-| Menu        | Seção                                 |
-| ----------- | ------------------------------------- |
+| Menu        | Seção                              |
+| ----------- | ---------------------------------- |
 | A Nyanni    | `#about` · Nossa filosofia         |
-| Cuidados    | `#cuidados` · Tipos de acolhimento    |
-| Estrutura   | `#estrutura` · Serviços               |
-| Experiência | `#experiencia` · Faixa de pilares     |
-| Famílias    | `#agendar` · Agendamento de visita    |
-| FAQ         | `#faq`                                |
+| Cuidados    | `#cuidados` · Tipos de acolhimento |
+| Estrutura   | `#estrutura` · Serviços            |
+| Experiência | `#experiencia` · Faixa de pilares  |
+| Famílias    | `#agendar` · Agendamento de visita |
+| FAQ         | `#faq`                             |
 
 ### Fotos
 

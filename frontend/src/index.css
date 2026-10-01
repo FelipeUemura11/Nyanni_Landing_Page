@@ -6,7 +6,8 @@
    --color-green → bg-green / text-green / border-green ...
    ========================================================= */
 @theme {
-    --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-sans:
+        "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
 
     /* O layout usa altura de linha 1.6 em todo texto corrido */
@@ -144,7 +145,11 @@
 /* Fundo do card "Acompanhamento Individual" (imita foto desfocada do layout) */
 @utility bg-feature {
     background:
-        radial-gradient(110% 85% at 90% 105%, #a89d92 0%, rgb(168 157 146 / 0) 62%),
+        radial-gradient(
+            110% 85% at 90% 105%,
+            #a89d92 0%,
+            rgb(168 157 146 / 0) 62%
+        ),
         radial-gradient(90% 70% at 8% 0%, #fbfaf8 0%, rgb(251 250 248 / 0) 70%),
         linear-gradient(165deg, #f3f1ee 0%, #ddd7d0 68%, #c6beb5 100%);
 }

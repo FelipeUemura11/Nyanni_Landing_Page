@@ -76,21 +76,21 @@ export function Visit() {
     return (
         <section
             id="agendar"
-            className="section-y bg-forest text-cream [--focus-ring:var(--color-cream)]"
+            className="bg-forest section-y text-cream [--focus-ring:var(--color-cream)]"
             aria-labelledby="agendar-title"
         >
             <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
                 <div>
-                    <p className="eyebrow text-sage">
-                        {visit.eyebrow}
-                    </p>
+                    <p className="eyebrow text-sage">{visit.eyebrow}</p>
                     <h2
                         id="agendar-title"
-                        className="heading-lg mt-4 mb-5 max-w-[16ch] text-cream"
+                        className="mt-4 mb-5 max-w-[16ch] heading-lg text-cream"
                     >
                         {visit.title}
                     </h2>
-                    <p className="max-w-120 leading-[1.7] text-cream/80">{visit.lead}</p>
+                    <p className="max-w-120 leading-[1.7] text-cream/80">
+                        {visit.lead}
+                    </p>
 
                     <ul className="mt-9 grid gap-4">
                         <li>
@@ -140,10 +140,7 @@ export function Visit() {
                         noValidate
                     >
                         <div className={FIELD}>
-                            <label
-                                className={LABEL}
-                                htmlFor={`${id}-name`}
-                            >
+                            <label className={LABEL} htmlFor={`${id}-name`}>
                                 Seu nome
                             </label>
                             <input
@@ -213,7 +210,7 @@ export function Visit() {
                                 </label>
                                 <select
                                     id={`${id}-period`}
-                                    className={`${INPUT} select-chevron cursor-pointer pr-11`}
+                                    className={`${INPUT} cursor-pointer select-chevron pr-11`}
                                     value={form.period}
                                     onChange={(event) =>
                                         update("period", event.target.value)
@@ -232,10 +229,7 @@ export function Visit() {
                         </div>
 
                         <div className={FIELD}>
-                            <label
-                                className={LABEL}
-                                htmlFor={`${id}-message`}
-                            >
+                            <label className={LABEL} htmlFor={`${id}-message`}>
                                 Mensagem{" "}
                                 <span className="font-normal text-muted">
                                     (opcional)
@@ -261,7 +255,11 @@ export function Visit() {
                         <div aria-live="polite">
                             {sentLink ? (
                                 <p className="flex gap-2.5 rounded-field bg-mint px-4 py-3.5 text-[0.9375rem] leading-[1.55] text-mint-ink">
-                                    <Icon name="check" size={18} className="mt-0.5 shrink-0" />
+                                    <Icon
+                                        name="check"
+                                        size={18}
+                                        className="mt-0.5 shrink-0"
+                                    />
                                     <span>
                                         Sua mensagem foi aberta no WhatsApp. É
                                         só tocar em enviar por lá.{" "}

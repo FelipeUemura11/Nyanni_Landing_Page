@@ -34,7 +34,10 @@ export function Photo({ src, alt, className, priority = false }: PhotoProps) {
         <img
             src={src}
             alt={alt}
-            className={cx("block h-full w-full bg-sand object-cover", className)}
+            className={cx(
+                "block h-full w-full bg-sand object-cover",
+                className,
+            )}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             decoding="async"

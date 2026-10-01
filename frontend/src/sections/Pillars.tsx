@@ -1,21 +1,23 @@
 import { Icon } from "../components/icons/Icon";
 import { pillars } from "../content/site";
-import styles from "./Pillars.module.css";
 
 export function Pillars() {
     return (
         <section
             id="experiencia"
-            className={styles.strip}
+            className="border-y border-line bg-sand"
             aria-labelledby="experiencia-title"
         >
-            <h2 id="experiencia-title" className="visually-hidden">
+            <h2 id="experiencia-title" className="sr-only">
                 Como é viver na Nyanni
             </h2>
-            <ul className={`container ${styles.list}`}>
+            <ul className="wrapper grid grid-cols-2 gap-x-6 gap-y-8 py-8 md:grid-cols-4 md:gap-6">
                 {pillars.map((pillar) => (
-                    <li key={pillar.title} className={styles.item}>
-                        <span className={styles.icon}>
+                    <li
+                        key={pillar.title}
+                        className="flex flex-col items-center gap-3 text-center text-sm tracking-[0.02em] text-ink"
+                    >
+                        <span className="grid size-10 place-items-center rounded-full bg-cream text-green">
                             <Icon name={pillar.icon} size={18} />
                         </span>
                         {pillar.title}

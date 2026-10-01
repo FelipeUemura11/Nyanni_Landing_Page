@@ -17,19 +17,23 @@ npm run lint
 ```
 src/
 ├── content/site.ts        ← TODO o conteúdo (textos, links, contato, imagens)
-├── sections/              ← uma seção da página por arquivo (+ .module.css)
+├── sections/              ← uma seção da página por arquivo
 │   Hero · Pillars · About · CareProfiles · Services · Faq · Visit
 ├── components/
 │   ├── layout/            Header (menu mobile, item ativo), Footer, WhatsAppFab
 │   ├── ui/                Button (<a> ou <button>), Photo (com fallback)
-│   └── icons/Icon.tsx     ícones SVG inline (sem dependência)
+│   └── icons/Icon.tsx     ícones do Lucide (lucide-react)
 ├── hooks/                 useScrolled, useActiveSection
 ├── lib/                   cx, links de WhatsApp/e-mail
-└── index.css              design tokens (cores, fontes, espaçamentos) + utilitários
-public/images/             hero.png, about.png
+└── index.css              Tailwind + design tokens (@theme) + utilitários
+public/images/             hero.webp, about.webp
 ```
 
-Estilo com CSS Modules (nativo do Vite), sem dependências além de React.
+Estilo com Tailwind CSS v4 (plugin `@tailwindcss/vite`). Os tokens do design
+(cores, fontes, raios, sombras) ficam no `@theme` de `src/index.css` e viram
+classes normais: `bg-green`, `text-body`, `rounded-card`, `shadow-photo`...
+Utilitários do projeto: `wrapper` (largura do conteúdo), `section-y`
+(espaçamento das seções), `eyebrow` e `heading-lg`.
 
 ## Trocando conteúdo
 

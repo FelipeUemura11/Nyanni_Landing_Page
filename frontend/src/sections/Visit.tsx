@@ -4,7 +4,12 @@ import { Icon } from "../components/icons/Icon";
 import { Button } from "../components/ui/Button";
 import { brand, contact, visit } from "../content/site";
 import { buildWhatsAppLink } from "../lib/whatsapp";
-import styles from "./Visit.module.css";
+
+/* Classes reaproveitadas pelos campos do formulário */
+const LABEL = "text-sm font-medium text-ink";
+const FIELD = "grid content-start gap-2";
+const INPUT =
+    "min-h-12 w-full rounded-field border border-line-strong bg-white px-4 py-3 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-[#9a968f] focus:border-green focus:shadow-[0_0_0_3px_rgb(82_106_90/0.2)] focus:outline-none aria-[invalid=true]:border-error";
 
 interface VisitForm {
     name: string;
@@ -71,26 +76,26 @@ export function Visit() {
     return (
         <section
             id="agendar"
-            className={styles.section}
+            className="section-y bg-forest text-cream [--focus-ring:var(--color-cream)]"
             aria-labelledby="agendar-title"
         >
-            <div className={`container ${styles.grid}`}>
-                <div className={styles.copy}>
-                    <p className={`eyebrow ${styles.eyebrow}`}>
+            <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
+                <div>
+                    <p className="eyebrow text-sage">
                         {visit.eyebrow}
                     </p>
                     <h2
                         id="agendar-title"
-                        className={`heading-lg ${styles.title}`}
+                        className="heading-lg mt-4 mb-5 max-w-[16ch] text-cream"
                     >
                         {visit.title}
                     </h2>
-                    <p className={styles.lead}>{visit.lead}</p>
+                    <p className="max-w-[30rem] leading-[1.7] text-cream/80">{visit.lead}</p>
 
-                    <ul className={styles.contactList}>
+                    <ul className="mt-9 grid gap-4">
                         <li>
                             <a
-                                className={styles.contactLink}
+                                className="group inline-flex items-center gap-3.5 text-cream no-underline"
                                 href={buildWhatsAppLink(
                                     contact.whatsappNumber,
                                     contact.greeting,
@@ -98,11 +103,11 @@ export function Visit() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <span className={styles.contactIcon}>
+                                <span className="grid size-11 place-items-center rounded-full border border-cream/30">
                                     <Icon name="phone" size={18} />
                                 </span>
-                                <span>
-                                    <span className={styles.contactLabel}>
+                                <span className="underline-offset-4 group-hover:underline">
+                                    <span className="block text-xs text-sage">
                                         WhatsApp
                                     </span>
                                     {contact.whatsappDisplay}
@@ -111,14 +116,14 @@ export function Visit() {
                         </li>
                         <li>
                             <a
-                                className={styles.contactLink}
+                                className="group inline-flex items-center gap-3.5 text-cream no-underline"
                                 href={`mailto:${contact.email}`}
                             >
-                                <span className={styles.contactIcon}>
+                                <span className="grid size-11 place-items-center rounded-full border border-cream/30">
                                     <Icon name="mail" size={18} />
                                 </span>
-                                <span>
-                                    <span className={styles.contactLabel}>
+                                <span className="underline-offset-4 group-hover:underline">
+                                    <span className="block text-xs text-sage">
                                         E-mail
                                     </span>
                                     {contact.email}
@@ -128,15 +133,15 @@ export function Visit() {
                     </ul>
                 </div>
 
-                <div className={styles.card}>
+                <div className="@container rounded-panel bg-cream p-[clamp(1.5rem,3.5vw,2.5rem)] text-ink [--focus-ring:var(--color-green)]">
                     <form
-                        className={styles.form}
+                        className="grid gap-[1.375rem]"
                         onSubmit={handleSubmit}
                         noValidate
                     >
-                        <div className={styles.field}>
+                        <div className={FIELD}>
                             <label
-                                className={styles.label}
+                                className={LABEL}
                                 htmlFor={`${id}-name`}
                             >
                                 Seu nome
@@ -144,7 +149,7 @@ export function Visit() {
                             <input
                                 ref={nameRef}
                                 id={`${id}-name`}
-                                className={styles.input}
+                                className={INPUT}
                                 type="text"
                                 autoComplete="name"
                                 value={form.name}
@@ -160,27 +165,24 @@ export function Visit() {
                             {nameError ? (
                                 <p
                                     id={`${id}-name-error`}
-                                    className={styles.error}
+                                    className="text-[0.8125rem] text-error"
                                 >
                                     {nameError}
                                 </p>
                             ) : null}
                         </div>
 
-                        <div className={styles.row}>
-                            <fieldset className={styles.fieldset}>
-                                <legend className={styles.label}>
+                        <div className="grid gap-x-4 gap-y-[1.375rem] @lg:grid-cols-[auto_minmax(0,1fr)]">
+                            <fieldset className="m-0 grid min-w-0 content-start gap-2 border-0 p-0">
+                                <legend className={LABEL}>
                                     A visita é para
                                 </legend>
-                                <div className={styles.choices}>
+                                <div className="flex flex-nowrap gap-2">
                                     {visit.forOptions.map((option) => (
-                                        <label
-                                            key={option.value}
-                                            className={styles.choice}
-                                        >
+                                        <label key={option.value}>
                                             <input
                                                 type="radio"
-                                                className="visually-hidden"
+                                                className="peer sr-only"
                                                 name={`${id}-for`}
                                                 value={option.value}
                                                 checked={
@@ -194,22 +196,24 @@ export function Visit() {
                                                     )
                                                 }
                                             />
-                                            <span>{option.label}</span>
+                                            <span className="inline-flex min-h-12 cursor-pointer items-center rounded-full border border-line-strong bg-white px-[1.125rem] text-[0.9375rem] transition-colors duration-150 peer-checked:border-green peer-checked:bg-green peer-checked:text-cream peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-green hover:border-green">
+                                                {option.label}
+                                            </span>
                                         </label>
                                     ))}
                                 </div>
                             </fieldset>
 
-                            <div className={styles.field}>
+                            <div className={FIELD}>
                                 <label
-                                    className={styles.label}
+                                    className={LABEL}
                                     htmlFor={`${id}-period`}
                                 >
                                     Melhor período
                                 </label>
                                 <select
                                     id={`${id}-period`}
-                                    className={`${styles.input} ${styles.select}`}
+                                    className={`${INPUT} select-chevron cursor-pointer pr-11`}
                                     value={form.period}
                                     onChange={(event) =>
                                         update("period", event.target.value)
@@ -227,19 +231,19 @@ export function Visit() {
                             </div>
                         </div>
 
-                        <div className={styles.field}>
+                        <div className={FIELD}>
                             <label
-                                className={styles.label}
+                                className={LABEL}
                                 htmlFor={`${id}-message`}
                             >
                                 Mensagem{" "}
-                                <span className={styles.optional}>
+                                <span className="font-normal text-muted">
                                     (opcional)
                                 </span>
                             </label>
                             <textarea
                                 id={`${id}-message`}
-                                className={`${styles.input} ${styles.textarea}`}
+                                className={`${INPUT} min-h-[108px] resize-y leading-[1.55]`}
                                 rows={3}
                                 placeholder="Conte um pouco sobre a rotina ou as necessidades de quem vai morar aqui."
                                 value={form.message}
@@ -256,12 +260,13 @@ export function Visit() {
 
                         <div aria-live="polite">
                             {sentLink ? (
-                                <p className={styles.status}>
-                                    <Icon name="check" size={18} />
+                                <p className="flex gap-2.5 rounded-field bg-mint px-4 py-3.5 text-[0.9375rem] leading-[1.55] text-mint-ink">
+                                    <Icon name="check" size={18} className="mt-0.5 shrink-0" />
                                     <span>
                                         Sua mensagem foi aberta no WhatsApp. É
                                         só tocar em enviar por lá.{" "}
                                         <a
+                                            className="font-semibold text-inherit"
                                             href={sentLink}
                                             target="_blank"
                                             rel="noopener noreferrer"

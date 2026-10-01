@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { cx } from "../../lib/cx";
-import styles from "./Photo.module.css";
 
 interface PhotoProps {
     src?: string;
@@ -21,7 +20,10 @@ export function Photo({ src, alt, className, priority = false }: PhotoProps) {
             <div
                 role="img"
                 aria-label={alt}
-                className={cx(styles.placeholder, className)}
+                className={cx(
+                    "grid min-h-[200px] w-full place-items-center bg-linear-160 from-sand to-tile text-[0.8125rem] tracking-[0.02em] text-muted",
+                    className,
+                )}
             >
                 <span aria-hidden="true">Foto do espaço</span>
             </div>
@@ -32,7 +34,7 @@ export function Photo({ src, alt, className, priority = false }: PhotoProps) {
         <img
             src={src}
             alt={alt}
-            className={cx(styles.photo, className)}
+            className={cx("block h-full w-full bg-sand object-cover", className)}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             decoding="async"

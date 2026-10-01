@@ -1,18 +1,17 @@
 import { contact } from "../../content/site";
 import { buildWhatsAppLink } from "../../lib/whatsapp";
 import { Icon } from "../icons/Icon";
-import styles from "./WhatsAppFab.module.css";
 
 export function WhatsAppFab() {
     return (
         <a
-            className={styles.fab}
+            className="fixed right-[clamp(1rem,3vw,2rem)] bottom-[clamp(1rem,3vw,2rem)] z-40 grid size-14 place-items-center rounded-full bg-green text-cream shadow-float transition duration-200 ease-soft hover:-translate-y-0.5 hover:bg-green-dark"
             href={buildWhatsAppLink(contact.whatsappNumber, contact.greeting)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Conversar com a equipe pelo WhatsApp"
         >
-            <Icon name="message" size={22}/>
+            <Icon name="message" size={22} />
         </a>
     );
 }

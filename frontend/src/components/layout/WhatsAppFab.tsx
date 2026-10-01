@@ -12,7 +12,7 @@ export function WhatsAppFab() {
             rel="noopener noreferrer"
             aria-label="Conversar com a equipe pelo WhatsApp"
         >
-            <Icon name="message" size={22} />
+            <Icon name="message" size={22}/>
         </a>
     );
 }

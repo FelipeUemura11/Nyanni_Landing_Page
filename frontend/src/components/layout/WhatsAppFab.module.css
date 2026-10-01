@@ -1,22 +1,33 @@
 .fab {
-  position: fixed;
-  right: clamp(1rem, 3vw, 2rem);
-  bottom: clamp(1rem, 3vw, 2rem);
-  z-index: 40;
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--color-green);
-  color: var(--color-cream);
-  box-shadow: var(--shadow-float);
-  transition:
-    background-color 0.2s var(--ease),
-    transform 0.2s var(--ease);
+    position: fixed;
+    right: clamp(1rem, 3vw, 2rem);
+    bottom: clamp(1rem, 3vw, 2rem);
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2f4a37 0%, #526a5a 100%);
+    color: var(--color-cream);
+    box-shadow: 0 0px 15px rgba(40, 88, 57, 0.4);
+    transition:
+        background-color 0.3s var(--ease),
+        transform 0.2s var(--ease);
+    animation: float 3s ease-in-out infinite;
 }
 
 .fab:hover {
-  background: var(--color-green-dark);
-  transform: translateY(-2px);
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0px 15px rgba(9, 78, 34, 0.6);
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }

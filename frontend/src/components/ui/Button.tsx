@@ -25,13 +25,17 @@ export type ButtonProps = LinkProps | NativeButtonProps;
 
 // A cor da borda fica só nas variantes: duas classes de border-color na
 // mesma string conflitam e o Tailwind não garante qual vence.
+// O brilho é um ::before (before:) com um degradê que fica escondido à
+// esquerda e desliza até a direita no hover (igual ao projeto contabilidade).
+// `overflow-hidden` recorta o brilho nas bordas arredondadas do botão.
 const BASE =
-    "inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border font-medium leading-none whitespace-nowrap no-underline transition-colors duration-200 ease-soft [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-0.5";
+    "relative inline-flex cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full border font-medium leading-none whitespace-nowrap no-underline transition-colors duration-200 ease-soft before:pointer-events-none before:absolute before:inset-y-0 before:-left-full before:w-full before:bg-linear-to-r before:from-transparent before:to-transparent before:transition-[left] before:duration-600 before:ease-out hover:before:left-full [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-0.5";
 
 const VARIANTS: Record<Variant, string> = {
-    primary: "border-transparent bg-green text-cream hover:bg-green-dark",
+    primary:
+        "border-transparent bg-green text-cream before:via-white/[0.041] hover:bg-green-dark",
     outline:
-        "border-line-strong bg-white text-ink hover:border-green hover:text-green-dark",
+        "border-line-strong bg-white text-ink before:via-green/10 hover:border-green hover:text-green-dark",
 };
 
 const SIZES: Record<Size, string> = {

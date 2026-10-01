@@ -2,11 +2,12 @@ import { useId, useRef, useState } from "react";
 import type { ComponentProps } from "react";
 import { Icon } from "../components/icons/Icon";
 import { Button } from "../components/ui/Button";
+import { Reveal } from "../components/ui/Reveal";
 import { brand, contact, contact_form } from "../content/site";
 import { buildWhatsAppLink } from "../lib/whatsapp";
 
 /* Classes reaproveitadas pelos campos do formulário */
-const LABEL = "text-sm font-medium text-ink";
+const LABEL = "text-lg text-ink";
 const FIELD = "grid content-start gap-2";
 const INPUT =
     "min-h-12 w-full rounded-field border border-line-strong bg-white px-4 py-3 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-[#9a968f] focus:border-green focus:shadow-[0_0_0_3px_rgb(82_106_90/0.2)] focus:outline-none aria-[invalid=true]:border-error";
@@ -80,7 +81,7 @@ export function Contact() {
             aria-labelledby="contact-title"
         >
             <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
-                <div>
+                <Reveal>
                     <p className="eyebrow text-sage">{contact_form.eyebrow}</p>
                     <h2
                         id="contact-title"
@@ -131,9 +132,12 @@ export function Contact() {
                             </a>
                         </li>
                     </ul>
-                </div>
+                </Reveal>
 
-                <div className="@container rounded-panel bg-cream p-[clamp(1.5rem,3.5vw,2.5rem)] text-ink [--focus-ring:var(--color-green)]">
+                <Reveal
+                    delay={150}
+                    className="@container rounded-panel bg-cream p-[clamp(1.5rem,3.5vw,2.5rem)] text-ink [--focus-ring:var(--color-green)]"
+                >
                     <form
                         className="grid gap-5.5"
                         onSubmit={handleSubmit}
@@ -193,7 +197,7 @@ export function Contact() {
                                                     )
                                                 }
                                             />
-                                            <span className="inline-flex min-h-12 cursor-pointer items-center rounded-full border border-line-strong bg-white px-4.5 text-[0.9375rem] transition-colors duration-150 peer-checked:border-green peer-checked:bg-green peer-checked:text-cream peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-green hover:border-green">
+                                            <span className="mt-0.5 inline-flex min-h-12 cursor-pointer items-center rounded-lg border border-line-strong bg-white px-4.5 text-[0.9375rem] transition-colors duration-150 peer-checked:border-green peer-checked:bg-green peer-checked:text-cream peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-green hover:border-green">
                                                 {option.label}
                                             </span>
                                         </label>
@@ -276,7 +280,7 @@ export function Contact() {
                             ) : null}
                         </div>
                     </form>
-                </div>
+                </Reveal>
             </div>
         </section>
     );

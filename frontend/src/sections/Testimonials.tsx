@@ -1,6 +1,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import { Icon } from "../components/icons/Icon";
+import { Reveal } from "../components/ui/Reveal";
 import { testimonial } from "../content/site";
 import { cx } from "../lib/cx";
 
@@ -41,13 +42,14 @@ export function Testimonials() {
             aria-roledescription="carousel"
         >
             <div className="wrapper">
-                <h2
+                <Reveal
+                    as="h2"
                     id="testimonials-title"
                     className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-ink"
                 >
                     {testimonial.title}
-                </h2>
-                <div className="flex items-center">
+                </Reveal>
+                <Reveal delay={120} className="flex items-center">
                     <button
                         type="button"
                         className={SETA}
@@ -95,7 +97,7 @@ export function Testimonials() {
                     >
                         <Icon name="arrowRight" />
                     </button>
-                </div>
+                </Reveal>
 
                 {posicoes > 1 && (
                     <div

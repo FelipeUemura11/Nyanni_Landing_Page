@@ -1,4 +1,5 @@
 import { Photo } from "../components/ui/Photo";
+import { Reveal } from "../components/ui/Reveal";
 import { about } from "../content/site";
 
 export function About() {
@@ -11,7 +12,7 @@ export function About() {
             aria-labelledby="filosofia-title"
         >
             <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-2">
-                <div>
+                <Reveal>
                     <p className="eyebrow text-body">{about.eyebrow}</p>
                     <h2
                         id="filosofia-title"
@@ -30,13 +31,15 @@ export function About() {
                             {paragraph}
                         </p>
                     ))}
-                </div>
+                </Reveal>
 
-                <Photo
-                    className="aspect-4/3 rounded-card shadow-photo"
-                    src={about.image.src}
-                    alt={about.image.alt}
-                />
+                <Reveal delay={150}>
+                    <Photo
+                        className="aspect-4/3 rounded-card shadow-photo"
+                        src={about.image.src}
+                        alt={about.image.alt}
+                    />
+                </Reveal>
             </div>
         </section>
     );

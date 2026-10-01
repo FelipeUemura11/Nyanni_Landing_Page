@@ -1,4 +1,5 @@
 import { Icon } from "../components/icons/Icon";
+import { Reveal } from "../components/ui/Reveal";
 import { faq } from "../content/site";
 
 export function Faq() {
@@ -9,7 +10,7 @@ export function Faq() {
             aria-labelledby="faq-title"
         >
             <div className="wrapper grid items-start gap-[clamp(2rem,6vw,5.5rem)] lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-                <div>
+                <Reveal>
                     <h2 id="faq-title" className="heading-lg text-ink">
                         {faq.title}
                     </h2>
@@ -22,9 +23,9 @@ export function Faq() {
                     >
                         Ficou alguma dúvida? Fale com a equipe
                     </a>
-                </div>
+                </Reveal>
 
-                <div className="border-t border-line-strong">
+                <Reveal delay={120} className="border-t border-line-strong">
                     {faq.items.map((item) => (
                         <details
                             key={item.question}
@@ -43,7 +44,7 @@ export function Faq() {
                             </p>
                         </details>
                     ))}
-                </div>
+                </Reveal>
             </div>
         </section>
     );

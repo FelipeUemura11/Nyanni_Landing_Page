@@ -1,4 +1,5 @@
 import { Icon } from "../components/icons/Icon";
+import { Reveal } from "../components/ui/Reveal";
 import { services } from "../content/site";
 import { cx } from "../lib/cx";
 
@@ -12,17 +13,21 @@ export function Services() {
             aria-labelledby="estrutura-title"
         >
             <div className="wrapper">
-                <header className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-160 text-center">
+                <Reveal
+                    as="header"
+                    className="mx-auto mb-[clamp(2.5rem,5vw,3.5rem)] max-w-160 text-center"
+                >
                     <h2 id="estrutura-title" className="heading-lg text-ink">
                         {services.title}
                     </h2>
                     <p className="mt-4 leading-[1.65] text-body">
                         {services.subtitle}
                     </p>
-                </header>
+                </Reveal>
 
                 <ul className="grid auto-rows-[minmax(124px,auto)] grid-cols-2 gap-3 sm:auto-rows-[minmax(150px,auto)] sm:grid-cols-3 sm:gap-4 lg:auto-rows-[minmax(190px,auto)] lg:grid-cols-[minmax(0,2fr)_repeat(2,minmax(0,1fr))]">
-                    <li
+                    <Reveal
+                        as="li"
                         className={cx(
                             "relative col-span-full flex min-h-65 flex-col justify-end overflow-hidden rounded-card p-[clamp(1.5rem,3vw,2rem)] bg-feature lg:col-1 lg:row-[1/span_2] lg:min-h-0",
                             // Garante leitura do texto quando houver foto no fundo
@@ -46,9 +51,13 @@ export function Services() {
                                 {feature.description}
                             </p>
                         </div>
-                    </li>
+                    </Reveal>
 
-                    <li className="col-span-full flex items-center gap-4 rounded-card bg-mint p-[clamp(1.5rem,3vw,2rem)] text-mint-ink lg:col-1 lg:row-3">
+                    <Reveal
+                        as="li"
+                        delay={80}
+                        className="col-span-full flex items-center gap-4 rounded-card bg-mint p-[clamp(1.5rem,3vw,2rem)] text-mint-ink lg:col-1 lg:row-3"
+                    >
                         <span className="grid size-11 shrink-0 place-items-center rounded-full border border-current">
                             <Icon name={highlight.icon} size={20} />
                         </span>
@@ -60,18 +69,20 @@ export function Services() {
                                 {highlight.description}
                             </p>
                         </div>
-                    </li>
+                    </Reveal>
 
-                    {items.map((item) => (
-                        <li
+                    {items.map((item, i) => (
+                        <Reveal
+                            as="li"
                             key={item.title}
+                            delay={160 + i * 70}
                             className="flex flex-col justify-between gap-8 rounded-card bg-tile p-5 text-ink sm:p-6"
                         >
                             <Icon name={item.icon} size={20} />
                             <h3 className="text-[0.9375rem] font-medium text-[#43443f]">
                                 {item.title}
                             </h3>
-                        </li>
+                        </Reveal>
                     ))}
                 </ul>
             </div>

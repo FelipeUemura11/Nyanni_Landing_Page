@@ -1,4 +1,5 @@
 import { Icon } from "../components/icons/Icon";
+import { Reveal } from "../components/ui/Reveal";
 import { assistance } from "../content/site";
 
 export function Assistance() {
@@ -9,17 +10,20 @@ export function Assistance() {
             aria-labelledby="cuidados-title"
         >
             <div className="wrapper">
-                <h2
+                <Reveal
+                    as="h2"
                     id="cuidados-title"
                     className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-white"
                 >
                     {assistance.title}
-                </h2>
+                </Reveal>
 
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {assistance.items.map((profile) => (
-                        <li
+                    {assistance.items.map((profile, i) => (
+                        <Reveal
+                            as="li"
                             key={profile.title}
+                            delay={i * 100}
                             className="bg-green flex flex-col gap-2.5 rounded-card px-5.5 pt-6 pb-7"
                         >
                             <span className="mb-3.5 grid size-10 place-items-center rounded-full bg-tile text-ink">
@@ -31,7 +35,7 @@ export function Assistance() {
                             <p className="text-sm leading-[1.6] text-muted">
                                 {profile.description}
                             </p>
-                        </li>
+                        </Reveal>
                     ))}
                 </ul>
             </div>

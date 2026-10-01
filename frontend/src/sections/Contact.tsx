@@ -10,7 +10,7 @@ import { buildWhatsAppLink } from "../lib/whatsapp";
 const LABEL = "text-lg text-ink";
 const FIELD = "grid content-start gap-2";
 const INPUT =
-    "min-h-12 w-full rounded-field border border-line-strong bg-white px-4 py-3 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-[#9a968f] focus:border-green focus:shadow-[0_0_0_3px_rgb(82_106_90/0.2)] focus:outline-none aria-[invalid=true]:border-error";
+    "min-h-12 w-full rounded-field border border-line-strong bg-white px-4 py-3 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-[#8a8cab] focus:border-green focus:shadow-[0_0_0_3px_rgb(59_63_140/0.2)] focus:outline-none aria-[invalid=true]:border-error";
 
 interface ContactForm {
     name: string;
@@ -50,7 +50,10 @@ export function Contact() {
     const nameRef = useRef<HTMLInputElement>(null);
     const id = useId();
 
-    const update = <K extends keyof ContactForm>(key: K, value: ContactForm[K]) => {
+    const update = <K extends keyof ContactForm>(
+        key: K,
+        value: ContactForm[K],
+    ) => {
         setForm((current) => ({ ...current, [key]: value }));
         if (key === "name" && nameError) setNameError(null);
     };
@@ -220,14 +223,16 @@ export function Contact() {
                                         update("period", event.target.value)
                                     }
                                 >
-                                    {contact_form.periodOptions.map((option) => (
-                                        <option
-                                            key={option.value}
-                                            value={option.value}
-                                        >
-                                            {option.label}
-                                        </option>
-                                    ))}
+                                    {contact_form.periodOptions.map(
+                                        (option) => (
+                                            <option
+                                                key={option.value}
+                                                value={option.value}
+                                            >
+                                                {option.label}
+                                            </option>
+                                        ),
+                                    )}
                                 </select>
                             </div>
                         </div>

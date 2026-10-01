@@ -37,7 +37,7 @@ export function Footer() {
             </div>
 
             {/* pb maior no celular para o botão flutuante não cobrir o texto */}
-            <div className="wrapper border-t border-[#dadcd3] pt-6 pb-22 text-center text-[0.8125rem] text-body sm:pb-8">
+            <div className="wrapper border-t border-[#eadfb6] pt-6 pb-22 text-center text-[0.8125rem] text-body sm:pb-8">
                 <p>
                     © {year} {brand.fullName}. Todos os direitos reservados.{" "}
                     {footer.credits}

@@ -2,7 +2,7 @@ import { useId, useRef, useState } from "react";
 import type { ComponentProps } from "react";
 import { Icon } from "../components/icons/Icon";
 import { Button } from "../components/ui/Button";
-import { brand, contact, visit } from "../content/site";
+import { brand, contact, contact_form } from "../content/site";
 import { buildWhatsAppLink } from "../lib/whatsapp";
 
 /* Classes reaproveitadas pelos campos do formulário */
@@ -11,7 +11,7 @@ const FIELD = "grid content-start gap-2";
 const INPUT =
     "min-h-12 w-full rounded-field border border-line-strong bg-white px-4 py-3 text-base text-ink transition-[border-color,box-shadow] duration-150 placeholder:text-[#9a968f] focus:border-green focus:shadow-[0_0_0_3px_rgb(82_106_90/0.2)] focus:outline-none aria-[invalid=true]:border-error";
 
-interface VisitForm {
+interface ContactForm {
     name: string;
     visitFor: string;
     period: string;
@@ -20,36 +20,36 @@ interface VisitForm {
 
 type SubmitHandler = NonNullable<ComponentProps<"form">["onSubmit"]>;
 
-const INITIAL_FORM: VisitForm = {
+const INITIAL_FORM: ContactForm = {
     name: "",
-    visitFor: visit.forOptions[0].value,
-    period: visit.periodOptions[0].value,
+    visitFor: contact_form.forOptions[0].value,
+    period: contact_form.periodOptions[0].value,
     message: "",
 };
 
 const labelOf = (options: { value: string; label: string }[], value: string) =>
     options.find((option) => option.value === value)?.label ?? value;
 
-function buildMessage(form: VisitForm): string {
+function buildMessage(form: ContactForm): string {
     const lines = [
         `Olá! Gostaria de agendar uma visita à ${brand.name}.`,
         "",
         `Nome: ${form.name.trim()}`,
-        `A visita é para: ${labelOf(visit.forOptions, form.visitFor).toLowerCase()}`,
-        `Melhor período: ${labelOf(visit.periodOptions, form.period).toLowerCase()}`,
+        `A visita é para: ${labelOf(contact_form.forOptions, form.visitFor).toLowerCase()}`,
+        `Melhor período: ${labelOf(contact_form.periodOptions, form.period).toLowerCase()}`,
     ];
     if (form.message.trim()) lines.push("", form.message.trim());
     return lines.join("\n");
 }
 
-export function Visit() {
-    const [form, setForm] = useState<VisitForm>(INITIAL_FORM);
+export function Contact() {
+    const [form, setForm] = useState<ContactForm>(INITIAL_FORM);
     const [nameError, setNameError] = useState<string | null>(null);
     const [sentLink, setSentLink] = useState<string | null>(null);
     const nameRef = useRef<HTMLInputElement>(null);
     const id = useId();
 
-    const update = <K extends keyof VisitForm>(key: K, value: VisitForm[K]) => {
+    const update = <K extends keyof ContactForm>(key: K, value: ContactForm[K]) => {
         setForm((current) => ({ ...current, [key]: value }));
         if (key === "name" && nameError) setNameError(null);
     };
@@ -75,21 +75,21 @@ export function Visit() {
 
     return (
         <section
-            id="agendar"
+            id="contact"
             className="bg-forest section-y text-cream [--focus-ring:var(--color-cream)]"
-            aria-labelledby="agendar-title"
+            aria-labelledby="contact-title"
         >
             <div className="wrapper grid items-center gap-[clamp(2.5rem,6vw,5.5rem)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
                 <div>
-                    <p className="eyebrow text-sage">{visit.eyebrow}</p>
+                    <p className="eyebrow text-sage">{contact_form.eyebrow}</p>
                     <h2
-                        id="agendar-title"
+                        id="contact-title"
                         className="mt-4 mb-5 max-w-[16ch] heading-lg text-cream"
                     >
-                        {visit.title}
+                        {contact_form.title}
                     </h2>
                     <p className="max-w-120 leading-[1.7] text-cream/80">
-                        {visit.lead}
+                        {contact_form.lead}
                     </p>
 
                     <ul className="mt-9 grid gap-4">
@@ -175,7 +175,7 @@ export function Visit() {
                                     A visita é para
                                 </legend>
                                 <div className="flex flex-nowrap gap-2">
-                                    {visit.forOptions.map((option) => (
+                                    {contact_form.forOptions.map((option) => (
                                         <label key={option.value}>
                                             <input
                                                 type="radio"
@@ -216,7 +216,7 @@ export function Visit() {
                                         update("period", event.target.value)
                                     }
                                 >
-                                    {visit.periodOptions.map((option) => (
+                                    {contact_form.periodOptions.map((option) => (
                                         <option
                                             key={option.value}
                                             value={option.value}

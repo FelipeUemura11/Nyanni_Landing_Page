@@ -5,13 +5,13 @@ export function CareProfiles() {
     return (
         <section
             id="cuidados"
-            className="bg-sand section-y"
+            className="bg-green-dark section-y"
             aria-labelledby="cuidados-title"
         >
             <div className="wrapper">
                 <h2
                     id="cuidados-title"
-                    className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-ink"
+                    className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-white"
                 >
                     {careProfiles.title}
                 </h2>
@@ -20,12 +20,12 @@ export function CareProfiles() {
                     {careProfiles.items.map((profile) => (
                         <li
                             key={profile.title}
-                            className="flex flex-col gap-2.5 rounded-card border border-line bg-cream px-5.5 pt-6 pb-7"
+                            className="bg-green flex flex-col gap-2.5 rounded-card px-5.5 pt-6 pb-7"
                         >
                             <span className="mb-3.5 grid size-10 place-items-center rounded-full bg-tile text-ink">
                                 <Icon name={profile.icon} size={18} />
                             </span>
-                            <h3 className="text-base leading-[1.35] font-medium text-ink">
+                            <h3 className="text-base leading-[1.35] font-medium text-white">
                                 {profile.title}
                             </h3>
                             <p className="text-sm leading-[1.6] text-muted">

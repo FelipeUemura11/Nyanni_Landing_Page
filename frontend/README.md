@@ -44,9 +44,9 @@ Edite apenas `src/content/site.ts`. Cada `href` do menu aponta para o `id` de um
 | A Nyanni    | `#about` · Nossa filosofia         |
 | Cuidados    | `#cuidados` · Tipos de acolhimento |
 | Estrutura   | `#estrutura` · Serviços            |
-| Experiência | `#experiencia` · Faixa de pilares  |
-| Famílias    | `#agendar` · Agendamento de visita |
 | FAQ         | `#faq`                             |
+| Depoimentos | `#testimonials` · Faixa de pilares  |
+| Contato     | `#contact` · Agendamento de visita |
 
 ### Fotos
 

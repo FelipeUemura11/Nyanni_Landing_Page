@@ -3,14 +3,7 @@ import { pillars } from "../content/site";
 
 export function Pillars() {
     return (
-        <section
-            id="experiencia"
-            className="border-y border-line bg-sand"
-            aria-labelledby="experiencia-title"
-        >
-            <h2 id="experiencia-title" className="sr-only">
-                Como é viver na Nyanni
-            </h2>
+        <section className="border-y border-line bg-sand">
             <ul className="wrapper grid grid-cols-2 gap-x-6 gap-y-8 py-8 md:grid-cols-4 md:gap-6">
                 {pillars.map((pillar) => (
                     <li

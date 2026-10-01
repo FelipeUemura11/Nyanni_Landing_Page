@@ -7,7 +7,8 @@ import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
 import { Pillars } from "./sections/Pillars";
 import { Services } from "./sections/Services";
-import { Visit } from "./sections/Visit";
+import { Visit } from "./sections/Contact";
+import { Testimonials } from "./sections/Testimonials";
 
 /**
  * Percurso de decisão da família (ver proposta):
@@ -24,6 +25,7 @@ function App() {
                 <CareProfiles />
                 <Services />
                 <Faq />
+                <Testimonials />
                 <Visit />
             </main>
             <Footer />

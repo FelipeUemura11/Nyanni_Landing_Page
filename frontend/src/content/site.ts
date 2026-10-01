@@ -61,9 +61,9 @@ export const navigation: NavLink[] = [
     { label: "Sobre Nós", href: "#about" },
     { label: "Cuidados", href: "#cuidados" },
     { label: "Estrutura", href: "#estrutura" },
-    { label: "Experiência", href: "#experiencia" },
-    { label: "Famílias", href: "#agendar" },
     { label: "FAQ", href: "#faq" },
+    { label: "Depoimentos", href: "#testimonials" },
+    { label: "Contato", href: "#contact" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ export const hero = {
     titlePrefix: "para",
     titleAccent: "viver bem.",
     lead: "Cuidado constante, conforto de lar e novas amizades. Descubra a tranquilidade de estar em um lugar pensado para o seu bem-estar, autonomia e dignidade.",
-    primaryCta: { label: "Agendar uma visita", href: "#agendar" },
+    primaryCta: { label: "Agendar uma visita", href: "#contact" },
     secondaryCta: { label: "Conheça a Nyanni", href: "#about" },
     image: {
         src: image("hero.webp"),
@@ -101,6 +101,63 @@ export const about = {
         src: image("about.webp"),
         alt: "Quatro residentes conversando e rindo em uma sala de estar, com chá e vinho sobre a mesa de centro",
     } satisfies ImageAsset,
+};
+
+export const testimonial = {
+    title: "O que as pessoas falam sobre Nós",
+    items: [
+        {
+            id: 1,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 1",
+            icon: "user",
+        },
+        {
+            id: 2,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 2",
+            icon: "user",
+        },
+        {
+            id: 3,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 3",
+            icon: "user",
+        },
+        {
+            id: 4,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 4",
+            icon: "user",
+        },
+        {
+            id: 5,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 5",
+            icon: "user",
+        },
+        {
+            id: 6,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 6",
+            icon: "user",
+        },
+        {
+            id: 7,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 7",
+            icon: "user",
+        },
+        {
+            id: 8,
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            name: "cliente 8",
+            icon: "user",
+        },
+    ],
+} satisfies {
+    title: string;
+    items: { id: number; description: string; name: string; icon: IconName }[];
 };
 
 export const careProfiles = {
@@ -187,7 +244,7 @@ export const faq = {
     ] satisfies FaqItem[],
 };
 
-export const visit = {
+export const contact_form = {
     eyebrow: "Agende uma visita",
     title: "Venha conhecer a Nyanni com sua família",
     lead: "A melhor forma de decidir é ver de perto. Conte um pouco sobre quem vai morar aqui e a equipe confirma o melhor horário com você.",
@@ -216,7 +273,7 @@ export const footer = {
             title: "Serviços",
             links: [
                 { label: "Portal da Família", href: "#" },
-                { label: "Agendar Visita", href: "#agendar" },
+                { label: "Agendar Visita", href: "#contact" },
             ],
         },
     ],

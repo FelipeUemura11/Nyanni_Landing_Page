@@ -18,7 +18,7 @@ export function Faq() {
                     </p>
                     <a
                         className="text-[0.9375rem] font-medium text-green-dark underline decoration-green/40 underline-offset-4 hover:decoration-current"
-                        href="#agendar"
+                        href="#contact"
                     >
                         Ficou alguma dúvida? Fale com a equipe
                     </a>

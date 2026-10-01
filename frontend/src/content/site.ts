@@ -104,7 +104,7 @@ export const about = {
 };
 
 export const testimonial = {
-    title: "O que as pessoas falam sobre Nós",
+    title: "O que as pessoas falam Sobre Nós",
     items: [
         {
             id: 1,

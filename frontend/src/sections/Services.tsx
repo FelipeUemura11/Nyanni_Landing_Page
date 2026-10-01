@@ -2,14 +2,6 @@ import { Icon } from "../components/icons/Icon";
 import { services } from "../content/site";
 import { cx } from "../lib/cx";
 
-/*
-  Grade "bento" no desktop (lg):
-  [ destaque grande ][ t1 ][ t2 ]
-  [ destaque grande ][ t3 ][ t4 ]
-  [ atividades      ][ t5 ][ t6 ]
-  O destaque e o bloco verde são posicionados; os demais preenchem sozinhos.
-  Abaixo de lg, os dois ocupam a largura toda e os blocos viram 3 / 2 colunas.
-*/
 export function Services() {
     const { feature, highlight, items } = services;
 

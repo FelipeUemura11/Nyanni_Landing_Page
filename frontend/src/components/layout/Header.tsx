@@ -59,7 +59,7 @@ export function Header() {
             <div className="wrapper flex h-18 items-center gap-8">
                 <a
                     href="#inicio"
-                    className="font-display text-[1.625rem] leading-none tracking-[-0.01em] text-ink no-underline"
+                    className="font-display text-3xl lg:text-5xl leading-none tracking-[-0.01em] text-ink no-underline"
                     aria-label={`${brand.fullName}, voltar ao início`}
                 >
                     {brand.name}

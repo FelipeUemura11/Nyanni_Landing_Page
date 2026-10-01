@@ -10,10 +10,7 @@ import { Contact } from "./sections/Contact";
 import { Footer } from "./components/layout/Footer";
 import { WhatsAppFab } from "./components/layout/WhatsAppFab";
 
-/**
- * Percurso de decisão da família (ver proposta):
- * apresentação → filosofia → tipos de acolhimento → serviços → dúvidas → agendamento.
- */
+
 function App() {
     return (
         <>

@@ -1,14 +1,14 @@
-import { Footer } from "./components/layout/Footer";
 import { Header } from "./components/layout/Header";
-import { WhatsAppFab } from "./components/layout/WhatsAppFab";
-import { CareProfiles } from "./sections/CareProfiles";
-import { Faq } from "./sections/Faq";
 import { Hero } from "./sections/Hero";
-import { About } from "./sections/About";
 import { Pillars } from "./sections/Pillars";
+import { About } from "./sections/About";
+import { Assistance } from "./sections/Assistance";
 import { Services } from "./sections/Services";
-import { Visit } from "./sections/Contact";
+import { Faq } from "./sections/Faq";
 import { Testimonials } from "./sections/Testimonials";
+import { Contact } from "./sections/Contact";
+import { Footer } from "./components/layout/Footer";
+import { WhatsAppFab } from "./components/layout/WhatsAppFab";
 
 /**
  * Percurso de decisão da família (ver proposta):
@@ -22,11 +22,11 @@ function App() {
                 <Hero />
                 <Pillars />
                 <About />
-                <CareProfiles />
+                <Assistance />
                 <Services />
                 <Faq />
                 <Testimonials />
-                <Visit />
+                <Contact />
             </main>
             <Footer />
             <WhatsAppFab />

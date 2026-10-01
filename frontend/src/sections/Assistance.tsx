@@ -1,7 +1,7 @@
 import { Icon } from "../components/icons/Icon";
-import { careProfiles } from "../content/site";
+import { assistance } from "../content/site";
 
-export function CareProfiles() {
+export function Assistance() {
     return (
         <section
             id="cuidados"
@@ -13,11 +13,11 @@ export function CareProfiles() {
                     id="cuidados-title"
                     className="mb-[clamp(2rem,4vw,3rem)] text-center heading-lg text-white"
                 >
-                    {careProfiles.title}
+                    {assistance.title}
                 </h2>
 
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {careProfiles.items.map((profile) => (
+                    {assistance.items.map((profile) => (
                         <li
                             key={profile.title}
                             className="bg-green flex flex-col gap-2.5 rounded-card px-5.5 pt-6 pb-7"

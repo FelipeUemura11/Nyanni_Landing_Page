@@ -51,6 +51,19 @@
     --animate-rise: rise 0.8s var(--ease-soft) both;
     --animate-rise-late: rise 0.9s var(--ease-soft) 0.12s both;
 
+    --animate-faq-open: faq-open 0.7s ease-in-out both;
+
+    @keyframes faq-open {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
     @keyframes rise {
         from {
             opacity: 0;

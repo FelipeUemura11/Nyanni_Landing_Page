@@ -160,7 +160,7 @@ export const testimonial = {
     items: { id: number; description: string; name: string; icon: IconName }[];
 };
 
-export const careProfiles = {
+export const assistance = {
     title: "Acolhimento para diferentes momentos",
     items: [
         {
@@ -219,7 +219,7 @@ export const services = {
 /** TODO(conteúdo): validar todas as respostas com a proprietária. */
 export const faq = {
     title: "Perguntas frequentes",
-    intro: "As dúvidas que as famílias costumam trazer no primeiro contato.",
+    intro: "Escolher um lugar de cuidado para quem você ama é uma decisão importante, e é natural ter dúvidas. Reunimos aqui as perguntas que as famílias mais trazem no primeiro contato, sobre visitas, rotina, cuidados e valores. Se não encontrar o que procura, nossa equipe responde com calma e sem compromisso.",
     items: [
         {
             question: "Posso conhecer a casa antes de decidir?",

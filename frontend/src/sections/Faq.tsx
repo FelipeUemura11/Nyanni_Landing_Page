@@ -13,7 +13,7 @@ export function Faq() {
                     <h2 id="faq-title" className="heading-lg text-ink">
                         {faq.title}
                     </h2>
-                    <p className="mt-4 mb-6 max-w-104 leading-[1.7] text-body">
+                    <p className="mt-4 mb-6 max-w-104 leading-[1.7] text-body text-justify">
                         {faq.intro}
                     </p>
                     <a
@@ -38,7 +38,7 @@ export function Faq() {
                                     className="shrink-0 text-green transition-transform duration-250 ease-soft group-open:rotate-180"
                                 />
                             </summary>
-                            <p className="max-w-152 pr-10 pb-6 leading-[1.7] text-body">
+                            <p className="max-w-152 pr-10 pb-6 leading-[1.7] text-body group-open:animate-faq-open">
                                 {item.answer}
                             </p>
                         </details>

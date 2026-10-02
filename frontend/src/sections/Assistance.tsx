@@ -24,7 +24,7 @@ export function Assistance() {
                             as="li"
                             key={profile.title}
                             delay={i * 100}
-                            className="bg-green flex flex-col gap-2.5 rounded-card px-5.5 pt-6 pb-7"
+                            className="flex flex-col gap-2.5 rounded-card bg-green px-5.5 pt-6 pb-7"
                         >
                             <span className="mb-3.5 grid size-10 place-items-center rounded-full bg-tile text-ink">
                                 <Icon name={profile.icon} size={18} />

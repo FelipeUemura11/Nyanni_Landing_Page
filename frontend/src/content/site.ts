@@ -108,49 +108,57 @@ export const testimonial = {
     items: [
         {
             id: 1,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 1",
             icon: "user",
         },
         {
             id: 2,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 2",
             icon: "user",
         },
         {
             id: 3,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 3",
             icon: "user",
         },
         {
             id: 4,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 4",
             icon: "user",
         },
         {
             id: 5,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 5",
             icon: "user",
         },
         {
             id: 6,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 6",
             icon: "user",
         },
         {
             id: 7,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 7",
             icon: "user",
         },
         {
             id: 8,
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
+            description:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,",
             name: "cliente 8",
             icon: "user",
         },
@@ -190,30 +198,121 @@ export const assistance = {
     ] satisfies IconItem[],
 };
 
+/** Conteúdo exibido no modal ao clicar em um serviço. */
+export interface ServiceDetail {
+    icon: IconName;
+    title: string;
+    /** Resumo curto exibido no card. */
+    summary?: string;
+    /** Texto do modal. */
+    description: string;
+    points: string[];
+    /** Foto do modal. Sem imagem, mostra um bloco neutro no lugar. */
+    image?: ImageAsset;
+}
+
+/**
+ * TODO(conteúdo): textos dos modais são provisórios; validar com a proprietária
+ * e adicionar as fotos reais (campo `image`, arquivos em /public/images).
+ * A ordem abaixo é a ordem dos blocos na grade.
+ */
 export const services = {
     title: "Cuidado integral e personalizado",
     subtitle:
         "Uma estrutura completa de serviços para garantir saúde, conforto e bem-estar todos os dias.",
-    feature: {
-        title: "Acompanhamento Individual",
-        description: "Plano de cuidados único para cada residente.",
-        // Opcional: foto de fundo do card. Sem imagem, usa o fundo em degradê do layout.
-        image: undefined as ImageAsset | undefined,
-    },
-    highlight: {
-        icon: "brain",
-        title: "Atividades Cognitivas",
-        description: "Estímulo mental diário",
-    } satisfies IconItem,
-    // A ordem abaixo é a ordem dos blocos na grade (duas colunas à direita)
+    hint: "Toque em um item para saber mais",
     items: [
-        { icon: "utensils", title: "Alimentação" },
-        { icon: "pillBottle", title: "Medicação" },
-        { icon: "shieldPlus", title: "Enfermagem" },
-        { icon: "stretch", title: "Fisioterapia" },
-        { icon: "shirt", title: "Lavanderia" },
-        { icon: "bath", title: "Higiene" },
-    ] satisfies IconItem[],
+        {
+            icon: "user",
+            title: "Acompanhamento Individual",
+            summary: "Plano de cuidados único para cada residente.",
+            description:
+                "Cada residente é conhecido pelo nome, pela história e pelas preferências. A equipe monta um plano de cuidados sob medida e o revisa sempre que a necessidade muda.",
+            points: [
+                "Avaliação inicial com a família",
+                "Plano de cuidados individual e revisado com frequência",
+                "Equipe de referência para cada residente",
+            ],
+        },
+        {
+            icon: "utensils",
+            title: "Alimentação",
+            description:
+                "Refeições preparadas com carinho, equilibradas e adaptadas às necessidades e ao gosto de cada pessoa.",
+            points: [
+                "Cardápio variado e nutritivo",
+                "Dietas específicas (restrições, texturas, diabetes)",
+                "Lanches ao longo do dia e hidratação acompanhada",
+            ],
+        },
+        {
+            icon: "pillBottle",
+            title: "Medicação",
+            description:
+                "Controle rigoroso de horários e doses, seguindo a prescrição médica de cada residente.",
+            points: [
+                "Administração por equipe treinada",
+                "Registro de cada dose",
+                "Comunicação com médicos e familiares",
+            ],
+        },
+        {
+            icon: "shieldPlus",
+            title: "Enfermagem",
+            description:
+                "Acompanhamento de saúde diário para cuidar de perto e agir cedo diante de qualquer mudança.",
+            points: [
+                "Aferição de sinais vitais",
+                "Curativos e cuidados clínicos",
+                "Encaminhamento rápido quando necessário",
+            ],
+        },
+        {
+            icon: "stretch",
+            title: "Fisioterapia",
+            description:
+                "Exercícios e atividades que preservam a mobilidade, o equilíbrio e a independência.",
+            points: [
+                "Sessões conforme a necessidade",
+                "Prevenção de quedas",
+                "Reabilitação e manutenção da força",
+            ],
+        },
+        {
+            icon: "shirt",
+            title: "Lavanderia",
+            description:
+                "Roupas e enxoval sempre limpos, identificados e cuidados com atenção.",
+            points: [
+                "Roupas pessoais identificadas",
+                "Roupa de cama e banho inclusas",
+                "Entrega organizada no quarto",
+            ],
+        },
+        {
+            icon: "bath",
+            title: "Higiene",
+            description:
+                "Apoio no banho e na higiene pessoal, com respeito à privacidade e à dignidade.",
+            points: [
+                "Auxílio conforme o grau de autonomia",
+                "Cuidado com pele e conforto",
+                "Ambiente seguro e acessível",
+            ],
+        },
+        {
+            icon: "brain",
+            title: "Atividades Cognitivas",
+            summary: "Estímulo mental diário",
+            description:
+                "Atividades que mantêm a mente ativa, fortalecem a memória e promovem convívio e alegria.",
+            points: [
+                "Jogos, música e leitura",
+                "Oficinas e atividades em grupo",
+                "Estímulo adaptado a cada pessoa",
+            ],
+        },
+    ] satisfies ServiceDetail[],
 };
 
 /** TODO(conteúdo): validar todas as respostas com a proprietária. */

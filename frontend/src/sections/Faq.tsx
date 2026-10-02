@@ -14,7 +14,7 @@ export function Faq() {
                     <h2 id="faq-title" className="heading-lg text-ink">
                         {faq.title}
                     </h2>
-                    <p className="mt-4 mb-6 max-w-104 leading-[1.7] text-body text-justify">
+                    <p className="mt-4 mb-6 max-w-104 text-justify leading-[1.7] text-body">
                         {faq.intro}
                     </p>
                     <a

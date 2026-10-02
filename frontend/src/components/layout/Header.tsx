@@ -59,9 +59,14 @@ export function Header() {
             <div className="wrapper flex h-18 items-center gap-8">
                 <a
                     href="#inicio"
-                    className="font-display text-3xl lg:text-5xl leading-none tracking-[-0.01em] text-ink no-underline"
+                    className="flex items-center gap-2.5 font-display text-3xl leading-none font-normal tracking-normal text-ink no-underline lg:text-5xl"
                     aria-label={`${brand.fullName}, voltar ao início`}
                 >
+                    <img
+                        src={`${import.meta.env.BASE_URL}logo.png`}
+                        alt=""
+                        className="h-11 w-auto lg:h-14"
+                    />
                     {brand.name}
                 </a>
 

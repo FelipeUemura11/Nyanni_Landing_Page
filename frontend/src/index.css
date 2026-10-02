@@ -5,10 +5,21 @@
    Cada variável aqui vira uma classe do Tailwind:
    --color-green → bg-green / text-green / border-green ...
    ========================================================= */
+/* Papernotes (Letterflow): coloque os arquivos em /public/fonts. Enquanto
+   não existirem, o navegador usa a Patrick Hand como reserva. */
+@font-face {
+    font-family: "Papernotes";
+    src:
+        url("/fonts/Papernotes.woff2") format("woff2"),
+        url("/fonts/Papernotes.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
 @theme {
     --font-sans:
         "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --font-display: "Papernotes", "Patrick Hand", "Segoe Print", cursive;
 
     /* O layout usa altura de linha 1.6 em todo texto corrido */
     --text-xs--line-height: 1.6;
@@ -17,34 +28,34 @@
     --text-lg--line-height: 1.6;
 
     /* Superfícies */
-    --color-cream: #fbf8f3; /* fundo principal */
-    --color-sand: #f5f2ed; /* faixas e seções alternadas */
-    --color-mist: #edeee8; /* rodapé */
-    --color-tile: #e6e7e1; /* blocos de serviço */
-    --color-line: #e8e3da;
-    --color-line-strong: #d9d3c8;
+    --color-cream: #fffbf0; /* fundo principal */
+    --color-sand: #fbf3d9; /* faixas e seções alternadas */
+    --color-mist: #f7ecc6; /* rodapé */
+    --color-tile: #f2e1a8; /* blocos de serviço */
+    --color-line: #eadfb6;
+    --color-line-strong: #dccf9c;
 
     /* Marca */
-    --color-green: #526a5a;
-    --color-green-dark: #435849;
-    --color-green-deep: #2f4a37;
-    --color-forest: #3b5242;
-    --color-mint: #d0e8d2;
-    --color-mint-ink: #3d5a42;
-    --color-sage: #b9cbbe;
+    --color-green: #3b3f8c;
+    --color-green-dark: #33377a;
+    --color-green-deep: #2a2d66;
+    --color-forest: #33377a;
+    --color-mint: #acebf2;
+    --color-mint-ink: #2a2d66;
+    --color-sage: #a0d94a;
 
     /* Texto */
-    --color-ink: #1d1f1c;
-    --color-body: #5f5c56;
+    --color-ink: #1d1f3d;
+    --color-body: #55577a;
     --color-muted: #e5e5e5;
-    --color-error: #a3412f;
+    --color-error: #d91a3d;
 
     /* Forma */
     --radius-field: 10px;
     --radius-card: 14px;
     --radius-panel: 20px;
-    --shadow-photo: 0 28px 56px -28px rgb(47 58 50 / 0.38);
-    --shadow-float: 0 12px 28px -10px rgb(47 58 50 / 0.45);
+    --shadow-photo: 0 28px 56px -28px rgb(42 45 102 / 0.38);
+    --shadow-float: 0 12px 28px -10px rgb(42 45 102 / 0.45);
 
     /* Movimento — única animação de entrada da página (hero) */
     --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -164,7 +175,7 @@
     font-weight: 400;
     font-size: clamp(1.875rem, 1.35rem + 1.6vw, 2.5rem);
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     text-wrap: balance;
 }
 
@@ -210,5 +221,42 @@
         opacity: 1;
         translate: 0 0;
         transition: none;
+    }
+}
+
+/* =========================================================
+   Modal de serviços (<dialog>)
+   ========================================================= */
+@layer components {
+    .service-modal {
+        width: min(46rem, calc(100% - 2rem));
+        max-height: calc(100dvh - 2rem);
+        margin: auto;
+        padding: 0;
+        border: 0;
+        border-radius: var(--radius-panel);
+        background: transparent;
+        overflow: auto;
+        box-shadow: 0 30px 80px -20px rgb(20 22 60 / 0.55);
+    }
+
+    .service-modal[open] {
+        animation: modal-in 0.35s var(--ease-soft) both;
+    }
+
+    .service-modal::backdrop {
+        background: rgb(29 31 61 / 0.55);
+        backdrop-filter: blur(3px);
+    }
+
+    @keyframes modal-in {
+        from {
+            opacity: 0;
+            transform: translateY(14px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
     }
 }

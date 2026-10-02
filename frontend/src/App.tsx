@@ -10,7 +10,6 @@ import { Contact } from "./sections/Contact";
 import { Footer } from "./components/layout/Footer";
 import { WhatsAppFab } from "./components/layout/WhatsAppFab";
 
-
 function App() {
     return (
         <>

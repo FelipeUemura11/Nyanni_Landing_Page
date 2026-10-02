@@ -14,11 +14,11 @@ export function Hero() {
                 <div className="animate-rise motion-reduce:animate-none">
                     <h1
                         id="hero-title"
-                        className="mb-6 font-display text-[clamp(2.75rem,1.5rem+4vw,4.5rem)] leading-[1.04] font-normal tracking-[-0.02em] text-ink"
+                        className="mb-6 font-display text-[clamp(2.75rem,1.5rem+4vw,4.5rem)] leading-[1.1] font-normal tracking-normal text-ink"
                     >
                         <span className="block">{hero.titleLine}</span>{" "}
                         {hero.titlePrefix}{" "}
-                        <em className="text-green-deep italic">
+                        <em className="text-green-deep not-italic">
                             {hero.titleAccent}
                         </em>
                     </h1>

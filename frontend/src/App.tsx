@@ -9,10 +9,12 @@ import { Testimonials } from "./sections/Testimonials";
 import { Contact } from "./sections/Contact";
 import { Footer } from "./components/layout/Footer";
 import { WhatsAppFab } from "./components/layout/WhatsAppFab";
+import { StructuredData } from "./components/seo/StructuredData";
 
 function App() {
     return (
         <>
+            <StructuredData />
             <Header />
             <main id="conteudo">
                 <Hero />

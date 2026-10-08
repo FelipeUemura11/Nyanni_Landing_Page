@@ -45,6 +45,15 @@ export const brand = {
         "Um espaço dedicado a proporcionar longevidade com dignidade, conforto e alegria.",
 } as const;
 
+export const seo = {
+    siteUrl: "https://nyanni.com.br/",
+    title: "Nyanni Residencial Sênior | Casa de repouso e cuidado para idosos",
+    description:
+        "Residencial sênior com cuidado 24h, enfermagem, fisioterapia, alimentação, conforto de lar e convivência para idosos. Agende uma visita à Nyanni.",
+    areaServed: "Curitiba e região metropolitana",
+    sameAs: [] as string[],
+} as const;
+
 /** TODO(conteúdo): substituir pelo WhatsApp e e-mail oficiais da casa. */
 export const contact = {
     whatsappNumber: "5541900000000", // DDI + DDD + número, só dígitos
@@ -74,7 +83,7 @@ export const hero = {
     titleLine: "Um novo capítulo",
     titlePrefix: "para",
     titleAccent: "viver bem.",
-    lead: "Cuidado constante, conforto de lar e novas amizades. Descubra a tranquilidade de estar em um lugar pensado para o seu bem-estar, autonomia e dignidade.",
+    lead: "Residencial sênior com cuidado 24h, conforto de lar e novas amizades. Descubra a tranquilidade de estar em um lugar pensado para bem-estar, autonomia e dignidade.",
     primaryCta: { label: "Agendar uma visita", href: "#contact" },
     secondaryCta: { label: "Conheça a Nyanni", href: "#about" },
     image: {
@@ -96,6 +105,7 @@ export const about = {
     paragraphs: [
         "Acreditamos que a longevidade deve ser celebrada com autonomia, dignidade e propósito. Nossos espaços foram cuidadosamente desenhados para não parecerem clínicas, mas sim extensões acolhedoras de um lar.",
         "Aqui, a segurança técnica é invisível aos olhos, mas presente em cada detalhe, permitindo que os residentes vivam com liberdade e que as famílias tenham paz de espírito.",
+        "A Nyanni reúne estrutura de casa de repouso, residencial para idosos e equipe de cuidado contínuo para apoiar diferentes fases da vida com atenção individual.",
     ],
     image: {
         src: image("about.webp"),
@@ -219,7 +229,7 @@ export interface ServiceDetail {
 export const services = {
     title: "Cuidado integral e personalizado",
     subtitle:
-        "Uma estrutura completa de serviços para garantir saúde, conforto e bem-estar todos os dias.",
+        "Uma estrutura completa de serviços para garantir saúde, conforto e bem-estar todos os dias, com apoio para idosos independentes e residentes que precisam de cuidados contínuos.",
     hint: "Toque em um item para saber mais",
     items: [
         {

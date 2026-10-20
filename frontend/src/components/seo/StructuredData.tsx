@@ -24,7 +24,7 @@ export function StructuredData() {
             image: imageUrl(hero.image.src),
             logo: absoluteUrl("logo.png"),
             email: contact.email,
-            telephone: contact.whatsappDisplay,
+            telephone: contact.phoneDisplay,
             priceRange: "$$",
             areaServed: seo.areaServed,
             sameAs: seo.sameAs,

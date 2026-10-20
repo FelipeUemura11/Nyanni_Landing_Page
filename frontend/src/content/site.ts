@@ -57,11 +57,12 @@ export const seo = {
     sameAs: [] as string[],
 } as const;
 
-/** TODO(conteúdo): substituir pelo WhatsApp e e-mail oficiais da casa. */
 export const contact = {
-    whatsappNumber: "5541900000000", // DDI + DDD + número, só dígitos
-    whatsappDisplay: "(41) 90000-0000",
-    email: "contato@nyanni.com.br",
+    phoneNumber: "+5541991760974", // usado no link tel:
+    phoneDisplay: "(41) 99176-0974",
+    whatsappNumber: "5541992274233", // DDI + DDD + número, só dígitos
+    whatsappDisplay: "(41) 99227-4233",
+    email: "nyannicasaderepouso@gmail.com",
     greeting: "Olá! Gostaria de saber mais sobre a Nyanni.",
 } as const;
 
@@ -390,14 +391,14 @@ export const footer = {
         {
             title: "Sobre Nós",
             links: [
-                { label: "Unidades", href: "#" },
-                { label: "Blog", href: "#" },
+                { label: "Unidades", href: "#estrutura" },
+                { label: "Blog", href: "#about" },
             ],
         },
         {
             title: "Serviços",
             links: [
-                { label: "Portal da Família", href: "#" },
+                { label: "Portal da Família", href: "#cuidados" },
                 { label: "Agendar Visita", href: "#contact" },
             ],
         },

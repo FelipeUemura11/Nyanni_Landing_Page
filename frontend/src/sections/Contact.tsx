@@ -1,6 +1,7 @@
 import { useId, useRef, useState } from "react";
 import type { ComponentProps } from "react";
 import { Icon } from "../components/icons/Icon";
+import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
 import { Button } from "../components/ui/Button";
 import { Reveal } from "../components/ui/Reveal";
 import { brand, contact, contact_form } from "../content/site";
@@ -108,13 +109,29 @@ export function Contact() {
                                 rel="noopener noreferrer"
                             >
                                 <span className="grid size-11 place-items-center rounded-full border border-cream/30">
-                                    <Icon name="phone" size={18} />
+                                    <WhatsAppIcon size={18} />
                                 </span>
                                 <span className="underline-offset-4 group-hover:underline">
                                     <span className="block text-xs text-sage">
                                         WhatsApp
                                     </span>
                                     {contact.whatsappDisplay}
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                className="group inline-flex items-center gap-3.5 text-cream no-underline"
+                                href={`tel:${contact.phoneNumber}`}
+                            >
+                                <span className="grid size-11 place-items-center rounded-full border border-cream/30">
+                                    <Icon name="phone" size={18} />
+                                </span>
+                                <span className="underline-offset-4 group-hover:underline">
+                                    <span className="block text-xs text-sage">
+                                        Telefone
+                                    </span>
+                                    {contact.phoneDisplay}
                                 </span>
                             </a>
                         </li>

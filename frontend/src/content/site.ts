@@ -4,6 +4,9 @@
  * Todo texto, link e imagem do site vive aqui: para trocar o conteúdo
  * não é preciso mexer nos componentes.
  *
+ * Ao mudar serviços, FAQ ou contato, atualize também public/llms.txt
+ * (resumo do site lido por assistentes de IA).
+ *
  * Itens marcados com TODO(conteúdo) precisam ser validados ou substituídos
  * com a proprietária antes da publicação (ver "Próximos passos" na proposta).
  */

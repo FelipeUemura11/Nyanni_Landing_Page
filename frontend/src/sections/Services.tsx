@@ -40,7 +40,9 @@ export function Services() {
                 <ul className="grid auto-rows-[minmax(130px,auto)] grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:auto-rows-[minmax(170px,auto)]">
                     {items.map((item, i) => {
                         const feature = i === 0;
-                        const wide = i === items.length - 1;
+                        // O último bloco ocupa duas colunas só quando isso fecha a grade sem buracos.
+                        const wide =
+                            i === items.length - 1 && items.length % 2 === 0;
                         return (
                             <Reveal
                                 as="li"

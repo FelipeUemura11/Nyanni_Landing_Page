@@ -1,6 +1,6 @@
 import { contact } from "../../content/site";
 import { buildWhatsAppLink } from "../../lib/whatsapp";
-import { Icon } from "../icons/Icon";
+import { WhatsAppIcon } from "../icons/WhatsAppIcon";
 
 export function WhatsAppFab() {
     return (
@@ -11,7 +11,7 @@ export function WhatsAppFab() {
             rel="noopener noreferrer"
             aria-label="Conversar com a equipe pelo WhatsApp"
         >
-            <Icon name="message" size={22} />
+            <WhatsAppIcon size={26} />
         </a>
     );
 }

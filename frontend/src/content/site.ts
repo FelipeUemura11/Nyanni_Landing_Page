@@ -245,6 +245,17 @@ export const services = {
             ],
         },
         {
+            icon: "stethoscope",
+            title: "Médica Geriatra",
+            description:
+                "Acompanhamento médico especializado no envelhecimento, cuidando da saúde de cada residente de forma preventiva e integrada.",
+            points: [
+                "Consultas e avaliações geriátricas periódicas",
+                "Revisão e ajuste das medicações",
+                "Orientação à equipe e às famílias",
+            ],
+        },
+        {
             icon: "utensils",
             title: "Alimentação",
             description:
@@ -268,7 +279,7 @@ export const services = {
         },
         {
             icon: "shieldPlus",
-            title: "Enfermagem",
+            title: "Cuidados/Cuidador",
             description:
                 "Acompanhamento de saúde diário para cuidar de perto e agir cedo diante de qualquer mudança.",
             points: [
@@ -283,6 +294,8 @@ export const services = {
             description:
                 "Exercícios e atividades que preservam a mobilidade, o equilíbrio e a independência.",
             points: [
+                "Fisio em grupo geral",
+                "Fisio neuro cognitivo funcional",
                 "Sessões conforme a necessidade",
                 "Prevenção de quedas",
                 "Reabilitação e manutenção da força",

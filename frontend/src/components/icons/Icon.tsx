@@ -17,6 +17,7 @@ import {
     PillBottle,
     ShieldPlus,
     Shirt,
+    Stethoscope,
     Users,
     UsersRound,
     UserStar,
@@ -55,6 +56,7 @@ const ICONS = {
     shirt: Shirt,
     bath: Bath,
     brain: Brain,
+    stethoscope: Stethoscope,
     check: Check,
 } satisfies Record<string, LucideIcon>;
 

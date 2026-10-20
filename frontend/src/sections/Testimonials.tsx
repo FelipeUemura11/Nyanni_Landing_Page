@@ -1,3 +1,4 @@
+import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useState } from "react";
 import { Icon } from "../components/icons/Icon";
@@ -8,8 +9,28 @@ import { cx } from "../lib/cx";
 const SETA =
     "mx-2 grid size-11 shrink-0 cursor-pointer place-items-center rounded-full border border-line-strong bg-white p-2.5 text-ink transition-colors duration-150 hover:border-green hover:text-green-dark disabled:pointer-events-none disabled:opacity-40";
 
+/** Tempo de cada depoimento na tela antes de avançar sozinho. */
+const INTERVALO_MS = 4700;
+
+// Quem pediu menos movimento no sistema não recebe a troca automática.
+const reduzirMovimento = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+).matches;
+
 export function Testimonials() {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start" });
+    // `loop` faz o carrossel seguir sempre para a direita, voltando ao 1º depois do último.
+    // O autoplay pausa com o mouse em cima ou com foco do teclado e retoma depois.
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        { align: "start", loop: true },
+        [
+            Autoplay({
+                delay: INTERVALO_MS,
+                active: !reduzirMovimento,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+            }),
+        ],
+    );
     const [podeVoltar, setPodeVoltar] = useState(false);
     const [podeAvancar, setPodeAvancar] = useState(false);
     const [posicoes, setPosicoes] = useState(0); // quantas bolinhas

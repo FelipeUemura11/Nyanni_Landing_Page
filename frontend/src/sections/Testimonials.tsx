@@ -1,6 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "../components/icons/Icon";
 import { Reveal } from "../components/ui/Reveal";
 import { testimonial } from "../content/site";
@@ -16,6 +16,71 @@ const INTERVALO_MS = 4700;
 const reduzirMovimento = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
 ).matches;
+
+/**
+ * Texto do depoimento limitado a 5 linhas, para todos os cards terem a mesma altura.
+ * A seta só aparece quando o texto foi cortado; ela expande o card e mostra tudo.
+ */
+function TextoDepoimento({
+    id,
+    texto,
+    aberto,
+    alternar,
+}: {
+    id: string;
+    texto: string;
+    aberto: boolean;
+    alternar: () => void;
+}) {
+    const ref = useRef<HTMLParagraphElement>(null);
+    const [cortado, setCortado] = useState(false);
+
+    // Mede se o texto passa das 5 linhas (muda com a largura da tela).
+    useEffect(() => {
+        const p = ref.current;
+        if (!p || aberto) return;
+        const medir = () => setCortado(p.scrollHeight > p.clientHeight + 1);
+        medir();
+        const observer = new ResizeObserver(medir);
+        observer.observe(p);
+        return () => observer.disconnect();
+    }, [aberto]);
+
+    return (
+        <>
+            <p
+                ref={ref}
+                id={id}
+                className={cx(
+                    "min-h-[8em] text-sm leading-[1.6] text-ink text-justify",
+                    !aberto && "line-clamp-5",
+                )}
+            >
+                {texto}
+            </p>
+            <button
+                type="button"
+                onClick={alternar}
+                aria-expanded={aberto}
+                aria-controls={id}
+                className={cx(
+                    "inline-flex cursor-pointer items-center gap-1 self-start text-sm font-medium text-green hover:text-green-dark",
+                    !cortado && !aberto && "invisible",
+                )}
+            >
+                {aberto ? "Mostrar menos" : "Ler mais"}
+                <Icon
+                    name="chevronDown"
+                    size={16}
+                    className={cx(
+                        "transition-transform duration-200",
+                        aberto && "rotate-180",
+                    )}
+                />
+            </button>
+        </>
+    );
+}
 
 export function Testimonials() {
     // `loop` faz o carrossel seguir sempre para a direita, voltando ao 1º depois do último.
@@ -35,10 +100,22 @@ export function Testimonials() {
     const [podeAvancar, setPodeAvancar] = useState(false);
     const [posicoes, setPosicoes] = useState(0); // quantas bolinhas
     const [atual, setAtual] = useState(0); // qual bolinha está ativa
+    const [aberto, setAberto] = useState<number | null>(null); // depoimento expandido
     const total = testimonial.items.length;
+
+    // Com um depoimento aberto, o carrossel para de andar até ele ser fechado.
+    useEffect(() => {
+        const autoplay = emblaApi?.plugins().autoplay;
+        if (!autoplay || reduzirMovimento) return;
+        if (aberto === null) autoplay.play();
+        else autoplay.stop();
+    }, [emblaApi, aberto]);
 
     useEffect(() => {
         if (!emblaApi) return;
+
+        const fechar = () => setAberto(null);
+        emblaApi.on("select", fechar);
 
         const atualizar = () => {
             setPodeVoltar(emblaApi.canScrollPrev());
@@ -52,6 +129,7 @@ export function Testimonials() {
 
         return () => {
             emblaApi.off("select", atualizar).off("reInit", atualizar);
+            emblaApi.off("select", fechar);
         };
     }, [emblaApi]);
 
@@ -84,19 +162,27 @@ export function Testimonials() {
                         ref={emblaRef}
                         className="min-w-0 flex-1 overflow-hidden"
                     >
-                        <ul className="-ml-5 flex">
+                        {/* items-start: abrir um card não estica os vizinhos */}
+                        <ul className="-ml-5 flex items-start">
                             {testimonial.items.map((t, i) => (
                                 <li
                                     key={t.id}
                                     aria-roledescription="slide"
                                     aria-label={`Depoimento ${i + 1} de ${total}`}
-                                    className="flex min-w-0 flex-[0_0_100%] pl-5 sm:flex-[0_0_50%] lg:flex-[0_0_25%]"
+                                    className="flex min-w-0 flex-[0_0_100%] pl-5 sm:flex-[0_0_50%] lg:flex-[0_0_calc(100%/3)]"
                                 >
                                     <div className="flex w-full flex-col gap-2.5 rounded-card border border-line px-5.5 pt-6 pb-7">
-                                        <p className="text-sm leading-[1.6] text-ink">
-                                            {t.description}
-                                        </p>
-                                        <div className="mt-auto flex items-center justify-between pt-4">
+                                        <TextoDepoimento
+                                            id={`depoimento-${t.id}`}
+                                            texto={t.description}
+                                            aberto={aberto === t.id}
+                                            alternar={() =>
+                                                setAberto((a) =>
+                                                    a === t.id ? null : t.id,
+                                                )
+                                            }
+                                        />
+                                        <div className="mt-auto flex items-center justify-between pt-2">
                                             <span className="grid size-10 place-items-center rounded-full bg-tile text-ink">
                                                 <Icon name={t.icon} size={18} />
                                             </span>

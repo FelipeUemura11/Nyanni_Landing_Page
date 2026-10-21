@@ -1,5 +1,5 @@
-# Resumo do site para assistentes de IA: https://nyanni.com.br/llms.txt
+# Resumo do site para assistentes de IA: https://nyanni.vercel.app/llms.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://nyanni.com.br/sitemap.xml
+Sitemap: https://nyanni.vercel.app/sitemap.xml

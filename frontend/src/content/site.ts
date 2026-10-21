@@ -49,7 +49,7 @@ export const brand = {
 } as const;
 
 export const seo = {
-    siteUrl: "https://nyanni.com.br/",
+    siteUrl: "https://nyanni.vercel.app/",
     title: "Nyanni Residencial Sênior | Casa de repouso e cuidado para idosos",
     description:
         "Residencial sênior com cuidado 24h, enfermagem, fisioterapia, alimentação, conforto de lar e convivência para idosos. Agende uma visita à Nyanni.",

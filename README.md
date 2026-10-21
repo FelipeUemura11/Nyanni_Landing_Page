@@ -4,7 +4,7 @@ Landing page da **Nyanni Residencial Sênior**, casa de repouso em Curitiba e re
 metropolitana. A página apresenta a casa, os cuidados e os serviços, mostra
 depoimentos de famílias e termina no agendamento de visita (formulário ou WhatsApp).
 
-Site: https://nyanni.com.br/
+Site: https://nyanni.vercel.app/
 
 ## Tecnologias
 

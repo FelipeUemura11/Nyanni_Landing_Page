@@ -46,12 +46,12 @@ Pilares: cuidado humanizado, ambiente acolhedor, vida ativa e social, família s
 
 ## Como agendar uma visita
 
-- [Formulário de agendamento](https://nyanni.com.br/#contact): informe para quem é a vaga e o melhor período (manhã ou tarde), e a equipe confirma o horário.
+- [Formulário de agendamento](https://nyanni.vercel.app/#contact): informe para quem é a vaga e o melhor período (manhã ou tarde), e a equipe confirma o horário.
 - WhatsApp: (41) 99227-4233 (https://wa.me/5541992274233)
 - Telefone: (41) 99176-0974
 - E-mail: nyannicasaderepouso@gmail.com
 
 ## Links
 
-- [Site oficial](https://nyanni.com.br/)
-- [Sitemap](https://nyanni.com.br/sitemap.xml)
+- [Site oficial](https://nyanni.vercel.app/)
+- [Sitemap](https://nyanni.vercel.app/sitemap.xml)

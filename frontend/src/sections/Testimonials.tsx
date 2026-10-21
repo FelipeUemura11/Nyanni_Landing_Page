@@ -52,7 +52,7 @@ function TextoDepoimento({
                 ref={ref}
                 id={id}
                 className={cx(
-                    "min-h-[8em] text-sm leading-[1.6] text-ink text-justify",
+                    "min-h-[8em] text-justify text-sm leading-[1.6] text-ink",
                     !aberto && "line-clamp-5",
                 )}
             >

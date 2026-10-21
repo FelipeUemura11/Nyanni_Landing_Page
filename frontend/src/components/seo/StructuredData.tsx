@@ -32,7 +32,10 @@ export function StructuredData() {
                 "@type": "ContactPoint",
                 contactType: "customer service",
                 telephone: contact.whatsappDisplay,
-                url: buildWhatsAppLink(contact.whatsappNumber, contact.greeting),
+                url: buildWhatsAppLink(
+                    contact.whatsappNumber,
+                    contact.greeting,
+                ),
                 availableLanguage: ["pt-BR"],
             },
             makesOffer: services.items.map((service) => ({
